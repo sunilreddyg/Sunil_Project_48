@@ -1,18 +1,14 @@
 package web_tests;
 
-import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.Test;
 
-import sun.reflect.generics.scope.MethodScope;
+import web_pages.New_Brnach_Creation;
 import web_pages.RanfordHome;
-
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-
 import java.io.File;
-import java.io.IOException;
 import java.lang.reflect.Method;
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -46,7 +42,7 @@ public class Test_Branches
 	}
 	
 	
-	@Test(priority=2)
+	@Test(priority=1)
 	public void Tc001_Admin_login_Invalid_Username()
 	{
 		RanfordHome RHP=new RanfordHome(driver);
@@ -58,13 +54,12 @@ public class Test_Branches
 		Assert.assertTrue(RHP.is_AlertPresent());
 		RHP.close_Alert();
 		
-		
 	}
 	
 	
 
 	
-	
+
 	
   @AfterMethod//Invoke every @Test annotation after.
   public void afterMethod(Method method) throws Exception 
