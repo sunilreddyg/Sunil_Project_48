@@ -1,5 +1,7 @@
 package web_pages;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,6 +20,11 @@ public class RanfordHome
 		PageFactory.initElements(driver, this);
 		driver.get(url);
 	}
+	
+	
+	//Input Data
+	public String Username="Admin";
+	public String password="Admin";
 	
 	
 	
@@ -85,5 +92,30 @@ public class RanfordHome
 		Click_login_btn();
 		
 	}
+	
+	
+	/*
+	 * Method Verify alert presented at webapge and return boolen avalue true/false
+	 */
+	public boolean is_AlertPresent()
+	{
+		try {
+			driver.switchTo().alert();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	
+	public void close_Alert()
+	{
+		if(is_AlertPresent())
+			driver.switchTo().alert().accept();
+		else
+			System.out.println("Alert not presented");
+	}
+	
+	
 
 }
