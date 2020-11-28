@@ -45,7 +45,8 @@ public class RanfordHome
 	@FindBy(xpath = "//input[@id='login']")
 	public WebElement Login_btn;
 	
-	
+	@FindBy(xpath = "//select[@id='drlist']")
+	public WebElement BankerSelection_Dropdown;
 	
 	public boolean Is_Ranford_Homepage_Opened()
 	{

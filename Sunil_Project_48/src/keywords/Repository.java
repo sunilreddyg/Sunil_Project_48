@@ -1,23 +1,30 @@
 package keywords;
 
-import java.awt.AWTException;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
 import javax.imageio.ImageIO;
-
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class Repository 
 {
-	WebDriver driver;
+	protected WebDriver driver;
 	Robot robot;
 	String Screen_filepath="C:\\Users\\SUNIL\\git\\Sunil_Project_48\\Sunil_Project_48\\screens\\";
+	WebDriverWait wait;
+	
+	
 	
 	public Repository(WebDriver driver) 
 	{
@@ -87,14 +94,165 @@ public class Repository
 	 * ReviewedBy:-->
 	 * Parameters used:-->
 	 * Last updated date:-->
+	 * Note:--> Make sure Applicatio visible while capture screen..
 	 */
-	public void Screen_Capture_At_Alert() throws Exception
+	public void Capture_Screen_At_Alert(String filename) throws Exception
 	{
 		Dimension scree_size=Toolkit.getDefaultToolkit().getScreenSize();
 		robot=new Robot();
 		BufferedImage Bimage=robot.createScreenCapture(new Rectangle(scree_size));
-		ImageIO.write(Bimage, "PNG", new File(Screen_filepath+"filename"+".png"));
+		ImageIO.write(Bimage, "PNG", new File(Screen_filepath+filename+".png"));
 	}
+	
+	
+	/*
+	 * keyword:==> Screen Capture at webpage.
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public void Caputure_Screen_At_WeBpage(String Filename)
+	{
+		try {
+			File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileHandler.copy(src, new File(Screen_filepath+Filename+".PNG"));
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+	/*
+	 * keyword:==> Wait for element to visible at webapge
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public WebElement wait_element_to_visible(WebElement element)
+	{
+		return wait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	
+	
+	/*
+	 * keyword:==> Wait for until element hide at webpage
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public boolean wait_element_to_Hide(WebElement element)
+	{
+		return wait.until(ExpectedConditions.invisibilityOf(element));
+	}
+	
+	
+	
+	/*
+	 * keyword:==> Wait for until element hide at webpage
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public boolean wait_for_alert()
+	{
+		try {
+			wait.until(ExpectedConditions.alertIsPresent());
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+		
+	}
+	
+	
+	
+	
+	/*
+	 * keyword:==> Type text into editbox.
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public void Type_text(WebElement element,String input)
+	{
+		element.clear();
+		element.sendKeys(input);
+		
+	}
+	
+
+	/*
+	 * keyword:==> Select dropdown using visible text
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public void Select_Drodpown(WebElement element,String OptinName)
+	{
+		new Select(element).selectByVisibleText(OptinName);
+		
+	}
+	
+	
+	/*
+	 * keyword:==> Element click on any location..
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public void click_element(WebElement element)
+	{
+		element.click();
+		
+	}
+	
+	/*
+	 * keyword:==> Verify title presented at current window.
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public boolean Is_title_presented(String exp_title)
+	{
+		return driver.getTitle().contains(exp_title);
+	}
+	
+	
+	/*
+	 * keyword:==> Verify url  presented at current window.
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public boolean Is_ulr_presented(String exp_url)
+	{
+		return driver.getCurrentUrl().contains(exp_url);
+	}
+	
+	
+	
 	
 
 }
