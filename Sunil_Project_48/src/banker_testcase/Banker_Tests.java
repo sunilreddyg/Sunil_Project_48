@@ -9,11 +9,19 @@ import web_pages.RanfordHome;
 public class Banker_Tests extends Repository
 {
 	
+	
+
 	public Banker_Tests(WebDriver driver) {
 		super(driver);
 	}
+
+
+
+	WebDriver driver;
+	Repository obj;
 	
 	
+
 	public void banker_login(String BranchName,String username,String password,String Exp_title)
 	{
 		
@@ -26,6 +34,19 @@ public class Banker_Tests extends Repository
 	}
 	
 
+
+	public void Receipts_DD_Deposit_using_Valid_AccoutNumber(String AccoutNumber)
+	{
+		
+		
+	}
+	
+	
+	public void Receipts_DD_Deposit_using_InValid_AccoutNumber(String AccoutNumber)
+	{
+		
+		
+	}
 	
 
 }

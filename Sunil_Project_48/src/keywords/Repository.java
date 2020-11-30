@@ -29,6 +29,7 @@ public class Repository
 	public Repository(WebDriver driver) 
 	{
 		this.driver=driver;
+		wait=new WebDriverWait(driver, 30);
 	}
 	
 	
@@ -246,13 +247,46 @@ public class Repository
 	 * Parameters used:-->
 	 * Last updated date:-->
 	 */
-	public boolean Is_ulr_presented(String exp_url)
+	public boolean Is_url_presented(String exp_url)
 	{
 		return driver.getCurrentUrl().contains(exp_url);
 	}
 	
 	
+	/*
+	 * keyword:==> Method verify expected inptu value available at editbox and return boolean value
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public boolean Verify_input_Value(WebElement Element,String Expected_input)
+	{
+		String Return_Value=Element.getAttribute("value");
+		return Return_Value.equals(Expected_input);
+	}
 	
+	
+	
+	/*
+	 * keyword:==> Method wait for element to visible and boolea value.
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public boolean wait_and_verify_element_visible(WebElement Element)
+	{
+		try {
+			wait.until(ExpectedConditions.visibilityOf(Element)).isDisplayed();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	
+	}
 	
 
 }
