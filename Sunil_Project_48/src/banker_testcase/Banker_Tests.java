@@ -2,23 +2,22 @@ package banker_testcase;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import keywords.Repository;
 import web_pages.RanfordHome;
 
 public class Banker_Tests extends Repository
 {
 	
-	
+	WebDriver driver;
 
 	public Banker_Tests(WebDriver driver) {
 		super(driver);
+		this.driver=driver;
 	}
 
 
 
-	WebDriver driver;
-	Repository obj;
+
 	
 	
 

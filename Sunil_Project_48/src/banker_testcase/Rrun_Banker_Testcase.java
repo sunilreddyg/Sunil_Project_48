@@ -15,16 +15,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Rrun_Banker_Testcase extends Banker_Tests
+public class Rrun_Banker_Testcase 
 {
-	  
-
-	  public Rrun_Banker_Testcase(WebDriver driver) 
-	  {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	  }
-
+	 
 	  String Driver_Path="Drivers\\chromedriver.exe";
 	  String screen_path="C:\\Users\\SUNIL\\git\\Sunil_Project_48\\Sunil_Project_48\\screens\\";
 	  String property_file_path="C:\\Users\\SUNIL\\git\\Sunil_Project_48\\Sunil_Project_48\\src\\banker_testcase\\banker_input.properties";
