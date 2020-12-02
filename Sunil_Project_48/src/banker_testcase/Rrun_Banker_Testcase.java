@@ -42,6 +42,13 @@ public class Rrun_Banker_Testcase
 	  }
 	  
 	  
+	  @Test(dependsOnMethods="Login_As_Banker")
+	  public void Tc021_Valid_Account_Details()
+	  {
+		String Valid_Act_num=properties.getProperty("Act_number_valid");
+		banker.Receipts_DD_Deposit_using_Valid_AccoutNumber(Valid_Act_num,"PragnaAlla");
+	  }
+	  
 	 
 	
 	
