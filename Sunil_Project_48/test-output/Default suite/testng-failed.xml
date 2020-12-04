@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeClass"/>
           <include name="afterMethod"/>
-          <include name="Login_As_Banker"/>
+          <include name="Tc_22_Verify_DD_Deposit"/>
           <include name="afterClass"/>
         </methods>
       </class> <!-- banker_testcase.Rrun_Banker_Testcase -->

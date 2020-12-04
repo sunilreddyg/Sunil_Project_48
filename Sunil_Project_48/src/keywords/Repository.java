@@ -192,7 +192,6 @@ public class Repository
 	{
 		element.clear();
 		element.sendKeys(input);
-		
 	}
 	
 
@@ -266,6 +265,22 @@ public class Repository
 		String Return_Value=Element.getAttribute("value");
 		return Return_Value.equals(Expected_input);
 	}
+	
+	
+	/*
+	 * keyword:==> Method get Input value from editbox.
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public String Get_editbox_input(WebElement Element)
+	{
+		String Return_Value=Element.getAttribute("value");
+		return Return_Value;
+	}
+	
 	
 	
 	

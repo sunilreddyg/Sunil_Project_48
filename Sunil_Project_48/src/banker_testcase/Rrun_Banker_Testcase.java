@@ -42,11 +42,19 @@ public class Rrun_Banker_Testcase
 	  }
 	  
 	  
-	  @Test(dependsOnMethods="Login_As_Banker")
+	  @Test(dependsOnMethods="Login_As_Banker",enabled=false)
 	  public void Tc021_Valid_Account_Details()
 	  {
 		String Valid_Act_num=properties.getProperty("Act_number_valid");
 		banker.Receipts_DD_Deposit_using_Valid_AccoutNumber(Valid_Act_num,"PragnaAlla");
+	  }
+	  
+	  
+	  
+	  @Test
+	  public void Tc_22_Verify_DD_Deposit() throws Exception
+	  {
+		  banker.Verify_DD_Doposit_Valid_Transaction("200", "3001776101365", "PragnaAlla");
 	  }
 	  
 	 

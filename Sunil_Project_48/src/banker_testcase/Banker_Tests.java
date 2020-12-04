@@ -54,5 +54,34 @@ public class Banker_Tests extends Repository
 		
 	}
 	
+	public void Verify_DD_Doposit_Valid_Transaction(String Enter_Cash,String AccountNum,String Account_Name) throws Exception
+	{
+		
+		Receipts_DD_Deposit_using_Valid_AccoutNumber(AccountNum, Account_Name);
+		Receipts receipts=new Receipts(driver);
+		String Before_Bal=Get_editbox_input(receipts.Account_Bal_Editbox);
+		double B_bal=Double.parseDouble(Before_Bal);
+		System.out.println(B_bal);
+		
+		Type_text(receipts.Ammout_Entry_EB, Enter_Cash);
+		Thread.sleep(2000);
+		Type_text(receipts.Check_OR_DD_CREDIT_EB, "123456");
+		click_element(receipts.Submit_btn);
+		//Assert.assertTrue(Verify_Alert_message("Transaction Has been posted"));
+		Thread.sleep(3000);
+		driver.switchTo().alert().accept();
+		Receipts_DD_Deposit_using_Valid_AccoutNumber(AccountNum, Account_Name);
+		
+		String After_Bal=Get_editbox_input(receipts.Account_Bal_Editbox);
+		double A_bal=Double.parseDouble(After_Bal); 
+		System.out.println(A_bal);
+		
+		double total=A_bal-B_bal;
+		double E_cash=Double.parseDouble(Enter_Cash);
+		Assert.assertEquals(total, E_cash);
+		System.out.println("Transaction completed ammout Debited from account");
+		
+	}
+	
 
 }
