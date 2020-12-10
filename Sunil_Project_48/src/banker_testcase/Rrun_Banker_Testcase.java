@@ -54,7 +54,7 @@ public class Rrun_Banker_Testcase
 	  @Test
 	  public void Tc_22_Verify_DD_Deposit() throws Exception
 	  {
-		  banker.Verify_DD_Doposit_Valid_Transaction("200", "3001776101365", "PragnaAlla");
+		  banker.Verify_DD_Doposit_Valid_Transaction("2000", "3001776101365", "PragnaAlla");
 	  }
 	  
 	 

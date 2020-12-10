@@ -3,14 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="banker_testcase.Rrun_Banker_Testcase">
+      <class name="sample.Test_Run">
         <methods>
           <include name="beforeClass"/>
-          <include name="afterMethod"/>
-          <include name="Tc_22_Verify_DD_Deposit"/>
+          <include name="Tc001_user_login"/>
           <include name="afterClass"/>
         </methods>
-      </class> <!-- banker_testcase.Rrun_Banker_Testcase -->
+      </class> <!-- sample.Test_Run -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

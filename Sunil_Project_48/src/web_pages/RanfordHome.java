@@ -1,7 +1,5 @@
 package web_pages;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,9 +24,7 @@ public class RanfordHome
 	public String Username="Admin";
 	public String password="Admin";
 	
-	
-	
-	
+
 	
 	@FindBy(xpath="//a[@href='http://ravinderbasani.com']")
 	public WebElement Home_btn;

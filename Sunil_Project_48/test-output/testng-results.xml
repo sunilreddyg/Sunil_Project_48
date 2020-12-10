@@ -1,51 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="36397" started-at="2020-12-04T10:04:05Z" finished-at="2020-12-04T10:04:41Z">
+  <suite name="Default suite" duration-ms="15" started-at="2020-12-07T11:30:49Z" finished-at="2020-12-07T11:30:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="36397" started-at="2020-12-04T10:04:05Z" finished-at="2020-12-04T10:04:41Z">
-      <class name="banker_testcase.Rrun_Banker_Testcase">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:banker_testcase.Rrun_Banker_Testcase@56f4468b]" name="beforeClass" is-config="true" duration-ms="8610" started-at="2020-12-04T15:34:05Z" finished-at="2020-12-04T15:34:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="Login_As_Banker()[pri:0, instance:banker_testcase.Rrun_Banker_Testcase@56f4468b]" name="Login_As_Banker" duration-ms="6722" started-at="2020-12-04T15:34:14Z" finished-at="2020-12-04T15:34:20Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Login_As_Banker -->
-        <test-method status="PASS" signature="afterMethod(java.lang.reflect.Method)[pri:0, instance:banker_testcase.Rrun_Banker_Testcase@56f4468b]" name="afterMethod" is-config="true" duration-ms="477" started-at="2020-12-04T15:34:20Z" finished-at="2020-12-04T15:34:21Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void banker_testcase.Rrun_Banker_Testcase.Login_As_Banker()]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="Tc_22_Verify_DD_Deposit()[pri:0, instance:banker_testcase.Rrun_Banker_Testcase@56f4468b]" name="Tc_22_Verify_DD_Deposit" duration-ms="9752" started-at="2020-12-04T15:34:21Z" finished-at="2020-12-04T15:34:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Tc_22_Verify_DD_Deposit -->
-        <test-method status="PASS" signature="afterMethod(java.lang.reflect.Method)[pri:0, instance:banker_testcase.Rrun_Banker_Testcase@56f4468b]" name="afterMethod" is-config="true" duration-ms="354" started-at="2020-12-04T15:34:31Z" finished-at="2020-12-04T15:34:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void banker_testcase.Rrun_Banker_Testcase.Tc_22_Verify_DD_Deposit() throws java.lang.Exception]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:banker_testcase.Rrun_Banker_Testcase@56f4468b]" name="afterClass" is-config="true" duration-ms="10431" started-at="2020-12-04T15:34:31Z" finished-at="2020-12-04T15:34:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- banker_testcase.Rrun_Banker_Testcase -->
+    <test name="Default test" duration-ms="15" started-at="2020-12-07T11:30:49Z" finished-at="2020-12-07T11:30:49Z">
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

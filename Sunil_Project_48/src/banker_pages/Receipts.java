@@ -6,7 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class Receipts {
+public class Receipts 
+{
 
 	public Receipts(WebDriver driver) 
 	{
@@ -16,7 +17,6 @@ public class Receipts {
 	
 	@FindBy(xpath = "//img[@src='images/Receipts_but.jpg']")
 	public WebElement Receipts_btn;
-	
 	
 	@FindBy(xpath = "//input[@id='TxtaccNO']")
 	public WebElement Account_number_Editbox;

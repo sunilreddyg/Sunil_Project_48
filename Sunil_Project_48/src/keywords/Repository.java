@@ -6,6 +6,8 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.concurrent.TimeUnit;
+
 import javax.imageio.ImageIO;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -29,8 +31,15 @@ public class Repository
 	public Repository(WebDriver driver) 
 	{
 		this.driver=driver;
-		wait=new WebDriverWait(driver, 30);
+		wait=new WebDriverWait(driver, 20);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
+	
+	
+	public WebDriver getDriver() {
+		return driver;
+	}
+	
 	
 	
 	/*
@@ -302,6 +311,38 @@ public class Repository
 		}
 	
 	}
+	
+	
+	/*
+	 * keyword:==> Verify Location Text
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public String get_location_text(WebElement element)
+	{
+		return element.getText();
+		
+	}
+	
+	
+	/*
+	 * keyword:==> Verify Location Text
+	 * Author:-->
+	 * Created-on:-->
+	 * ReviewedBy:-->
+	 * Parameters used:-->
+	 * Last updated date:-->
+	 */
+	public boolean Verify_location_Text(WebElement element,String Exp_text)
+	{
+		wait_element_to_visible(element);
+		return get_location_text(element).contains(Exp_text);
+		
+	}
+	
 	
 
 }

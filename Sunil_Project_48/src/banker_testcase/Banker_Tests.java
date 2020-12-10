@@ -7,7 +7,7 @@ import banker_pages.Receipts;
 import keywords.Repository;
 import web_pages.RanfordHome;
 
-public class Banker_Tests extends Repository
+public class Banker_Tests extends Repository 
 {
 	
 	WebDriver driver;
@@ -20,9 +20,6 @@ public class Banker_Tests extends Repository
 
 
 
-	
-	
-
 	public void banker_login(String BranchName,String username,String password,String Exp_title)
 	{
 		
@@ -32,6 +29,7 @@ public class Banker_Tests extends Repository
 		Type_text(RHP.Admin_Banker_password, password);
 		click_element(RHP.Login_btn);
 		Assert.assertTrue(Is_title_presented(Exp_title));
+		
 	}
 	
 
